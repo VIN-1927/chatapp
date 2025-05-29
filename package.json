@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "test.js",
-  "scripts": {
-    "dev": "npm-run-all -s generate webpackDev",
-    "webpackDev": "webpack serve",
-    "build": "npm-run-all -s generate webpackBuild",
-    "webpackBuild": "webpack",
-    "generate": "babel-node --presets=@babel/preset-react,@babel/preset-env generateHtml.js",
-    "previewDist": "node previewDist",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+
+"scripts": {
+  "dev": "npm run generate && npm run webpackDev",
+  "webpackDev": "webpack serve",
+  "build": "npm run generate && npm run webpackBuild",
+  "webpackBuild": "webpack",
+  "generate": "babel-node --presets=@babel/preset-react,@babel/preset-env generateHtml.js",
+  "previewDist": "node previewDist",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+
+
   "keywords": [],
   "author": "",
   "license": "ISC",
